@@ -149,7 +149,7 @@ export default function ViewResult() {
                   const course = courses.find((_c) => _c._id == c)!;
                   return (
                     <p key={i} className="text-sm text-white-300 mx-2">
-                      {course.name}
+                      {course.code}
                     </p>
                   );
                 })}
