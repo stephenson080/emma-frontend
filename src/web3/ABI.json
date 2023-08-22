@@ -1,0 +1,928 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "_adminGetAllStudents",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "reqNo",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "department",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "code",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "department_id",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct SchoolResult.StudentDetails[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "student_address",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "course_ids",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "enum SchoolResult.Semesters",
+        "name": "semester",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_session_id",
+        "type": "uint256"
+      }
+    ],
+    "name": "_admin_view_result_report",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "session",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64",
+            "name": "score",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint16",
+            "name": "point",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint256",
+            "name": "course",
+            "type": "uint256"
+          },
+          {
+            "internalType": "enum SchoolResult.Semesters",
+            "name": "semester",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bool",
+            "name": "created",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct SchoolResult.Result[]",
+        "name": "",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "course_ids",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "enum SchoolResult.Semesters",
+        "name": "semester",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_session_id",
+        "type": "uint256"
+      }
+    ],
+    "name": "_student_view_result_report",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "session",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64",
+            "name": "score",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint16",
+            "name": "point",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint256",
+            "name": "course",
+            "type": "uint256"
+          },
+          {
+            "internalType": "enum SchoolResult.Semesters",
+            "name": "semester",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bool",
+            "name": "created",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct SchoolResult.Result[]",
+        "name": "",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_code",
+        "type": "string"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_unit",
+        "type": "uint8"
+      }
+    ],
+    "name": "add_course",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_code",
+        "type": "string"
+      }
+    ],
+    "name": "add_department",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_student_address",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "course_id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "enum SchoolResult.Semesters",
+        "name": "semester",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_session_id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "score",
+        "type": "uint64"
+      }
+    ],
+    "name": "add_result",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "session_name",
+        "type": "string"
+      }
+    ],
+    "name": "add_session",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_reg_no",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_id",
+        "type": "uint256"
+      }
+    ],
+    "name": "add_student",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_student_address",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "course_id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "enum SchoolResult.Semesters",
+        "name": "semester",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_session_id",
+        "type": "uint256"
+      }
+    ],
+    "name": "admin_view_result",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "session",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64",
+            "name": "score",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint16",
+            "name": "point",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint256",
+            "name": "course",
+            "type": "uint256"
+          },
+          {
+            "internalType": "enum SchoolResult.Semesters",
+            "name": "semester",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bool",
+            "name": "created",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct SchoolResult.Result",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "courses",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "code",
+        "type": "string"
+      },
+      {
+        "internalType": "uint8",
+        "name": "unit",
+        "type": "uint8"
+      },
+      {
+        "internalType": "bool",
+        "name": "created",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "departments",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "dep_code",
+        "type": "string"
+      },
+      {
+        "internalType": "bool",
+        "name": "created",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_code",
+        "type": "string"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_unit",
+        "type": "uint8"
+      }
+    ],
+    "name": "edit_course",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_code",
+        "type": "string"
+      }
+    ],
+    "name": "edit_department",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "session_name",
+        "type": "string"
+      }
+    ],
+    "name": "edit_session",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_reg_no",
+        "type": "string"
+      }
+    ],
+    "name": "edit_student",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAllCourse",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "code",
+            "type": "string"
+          },
+          {
+            "internalType": "uint8",
+            "name": "unit",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bool",
+            "name": "created",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct SchoolResult.Course[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAllDepartment",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "dep_code",
+            "type": "string"
+          },
+          {
+            "internalType": "bool",
+            "name": "created",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct SchoolResult.Department[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAllSessions",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "bool",
+            "name": "created",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct SchoolResult.Session[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getNumberOfCourses",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getNumberOfDepartments",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getNumberOfResults",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getNumberOfSessions",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getNumberOfStudents",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "no_of_courses",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "no_of_departments",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "no_of_results",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "no_of_sessions",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "no_of_students",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "sessions",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "bool",
+        "name": "created",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "student_get_profile",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "reqNo",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "department",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "code",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "department_id",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct SchoolResult.StudentDetails",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "course_id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "enum SchoolResult.Semesters",
+        "name": "semester",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_session_id",
+        "type": "uint256"
+      }
+    ],
+    "name": "student_view_result",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "session",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64",
+            "name": "score",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint16",
+            "name": "point",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint256",
+            "name": "course",
+            "type": "uint256"
+          },
+          {
+            "internalType": "enum SchoolResult.Semesters",
+            "name": "semester",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bool",
+            "name": "created",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct SchoolResult.Result",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
